@@ -5,114 +5,197 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Harshitha's Portfolio</title>
     <style>
-        /* General Styles */
+        /* Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
             background-color: #f4f4f4;
             color: #333;
         }
 
-        a {
-            color: #3498db;
-            text-decoration: none;
+        a { text-decoration: none; color: inherit; }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            width: 100%;
+            background: #2c3e50;
+            padding: 15px 0;
+            top: 0;
+            left: 0;
+            z-index: 100;
         }
 
-        a:hover {
-            text-decoration: underline;
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
         }
 
-        h1, h2 {
-            color: #2c3e50;
+        nav ul li {
+            margin: 0 20px;
         }
+
+        nav ul li a {
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover { color: #3498db; }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: #fff;
+            padding: 0 20px;
+        }
+
+        header h1 { font-size: 3em; margin-bottom: 10px; }
+        header p { font-size: 1.5em; }
 
         /* Sections */
-        header, section {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        header h1 {
-            margin-bottom: 10px;
+        section {
+            max-width: 1000px;
+            margin: 80px auto;
+            padding: 40px 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         section h2 {
-            margin-bottom: 15px;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        ul li {
-            margin-bottom: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2c3e50;
         }
 
         /* Skills */
-        #skills ul li {
-            display: inline-block;
-            margin-right: 15px;
-            background-color: #3498db;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
+        #skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
         }
 
-        /* Project Cards */
+        .skill {
+            background: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .skill:hover {
+            transform: scale(1.1);
+            background: #2980b9;
+        }
+
+        /* Projects */
+        #projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
         .project-card {
-            background-color: #ecf0f1;
+            background: #ecf0f1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .project-card .card-content {
             padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
         }
 
         .project-card h3 {
-            margin-top: 0;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .project-card p {
+            margin-bottom: 15px;
         }
 
         .project-card a {
             display: inline-block;
-            margin-top: 10px;
-            padding: 6px 12px;
-            background-color: #3498db;
+            padding: 8px 15px;
+            background: #3498db;
             color: #fff;
-            border-radius: 4px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
         }
 
-        .project-card a:hover {
-            background-color: #2980b9;
-        }
+        .project-card a:hover { background: #2980b9; }
 
         /* Contact */
+        #contact p, #contact a {
+            text-align: center;
+            font-size: 1.2em;
+        }
+
         #contact a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #3498db;
             font-weight: bold;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5em; }
+            header p { font-size: 1.2em; }
         }
     </style>
 </head>
 <body>
-    <!-- Header / About Me -->
-    <header>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section / About -->
+    <header id="about">
         <h1>Hi, I'm Harshitha!</h1>
-        <p>Welcome to my portfolio. I work in Software Engineering, Testing, and Networking.</p>
+        <p>Software Engineer | QA Automation | Networking Enthusiast</p>
     </header>
 
     <!-- Skills Section -->
     <section id="skills">
         <h2>Skills</h2>
-        <ul>
-            <li>Python</li>
-            <li>Selenium / PyTest</li>
-            <li>Networking (BGP, TCP/IP)</li>
-            <li>API Automation</li>
-        </ul>
+        <div class="skill">Python</div>
+        <div class="skill">Selenium / PyTest</div>
+        <div class="skill">Networking (BGP, TCP/IP)</div>
+        <div class="skill">API Automation</div>
+        <div class="skill">Git & GitHub</div>
     </section>
 
     <!-- Projects Section -->
@@ -120,24 +203,33 @@
         <h2>Projects</h2>
 
         <div class="project-card">
-            <h3>Pictionary Game</h3>
-            <p><strong>Category:</strong> Software Engineering</p>
-            <p>A multiplayer drawing and guessing game built with Python and WebSockets.</p>
-            <a href="#">View Project</a>
+            <img src="https://via.placeholder.com/400x160.png?text=Pictionary+Game" alt="Pictionary Game">
+            <div class="card-content">
+                <h3>Pictionary Game</h3>
+                <p><strong>Category:</strong> Software Engineering</p>
+                <p>A multiplayer drawing and guessing game built with Python and WebSockets.</p>
+                <a href="#">View Project</a>
+            </div>
         </div>
 
         <div class="project-card">
-            <h3>Splashtop Automation Testing</h3>
-            <p><strong>Category:</strong> Testing</p>
-            <p>Automated testing of Splashtop website using Selenium and PyTest with POM.</p>
-            <a href="#">View Project</a>
+            <img src="https://via.placeholder.com/400x160.png?text=Splashtop+Testing" alt="Splashtop Automation Testing">
+            <div class="card-content">
+                <h3>Splashtop Automation Testing</h3>
+                <p><strong>Category:</strong> Testing</p>
+                <p>Automated testing of Splashtop website using Selenium and PyTest with POM.</p>
+                <a href="#">View Project</a>
+            </div>
         </div>
 
         <div class="project-card">
-            <h3>Network Traffic Analyzer & Visualizer</h3>
-            <p><strong>Category:</strong> Networking</p>
-            <p>Analyzes network traffic and generates visual graphs using Python.</p>
-            <a href="#">View Project</a>
+            <img src="https://via.placeholder.com/400x160.png?text=Network+Analyzer" alt="Network Traffic Analyzer">
+            <div class="card-content">
+                <h3>Network Traffic Analyzer & Visualizer</h3>
+                <p><strong>Category:</strong> Networking</p>
+                <p>Analyzes network traffic and generates visual graphs using Python.</p>
+                <a href="#">View Project</a>
+            </div>
         </div>
     </section>
 
@@ -145,6 +237,8 @@
     <section id="contact">
         <h2>Contact</h2>
         <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+        <p>GitHub: <a href="https://github.com/HarshithaML" target="_blank">github.com/HarshithaML</a></p>
+        <p>LinkedIn: <a href="#" target="_blank">linkedin.com/in/harshitha</a></p>
     </section>
 </body>
 </html>

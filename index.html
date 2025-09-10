@@ -5,62 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Harshitha's Portfolio</title>
     <style>
-    /* General Styles */
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        line-height: 1.6;
-        background-color: #f4f4f4;
-        color: #333;
-    }
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
-    a {
-        color: #3498db;
-        text-decoration: none;
-    }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
 
-    a:hover {
-        text-decoration: underline;
-    }
+        a:hover {
+            text-decoration: underline;
+        }
 
-    h1, h2 {
-        color: #2c3e50;
-    }
+        h1, h2 {
+            color: #2c3e50;
+        }
 
-    /* Sections */
-    header, section {
-        max-width: 900px;
-        margin: 40px auto;
-        padding: 20px;
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
+        /* Sections */
+        header, section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
 
-    header h1 {
-        margin-bottom: 10px;
-    }
+        header h1 {
+            margin-bottom: 10px;
+        }
 
-    section h2 {
-        margin-bottom: 15px;
-    }
+        section h2 {
+            margin-bottom: 15px;
+        }
 
-    ul {
-        list-style: none;
-        padding: 0;
-    }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
 
-    ul li {
-        margin-bottom: 10px;
-    }
+        ul li {
+            margin-bottom: 10px;
+        }
 
-    /* Contact */
-    #contact a {
-        font-weight: bold;
-    }
-</style>
+        /* Skills */
+        #skills ul li {
+            display: inline-block;
+            margin-right: 15px;
+            background-color: #3498db;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
 
+        /* Project Cards */
+        .project-card {
+            background-color: #ecf0f1;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+        }
+
+        .project-card a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 6px 12px;
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        .project-card a:hover {
+            background-color: #2980b9;
+        }
+
+        /* Contact */
+        #contact a {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <!-- Header / About Me -->
@@ -83,11 +118,27 @@
     <!-- Projects Section -->
     <section id="projects">
         <h2>Projects</h2>
-        <ul>
-            <li>Pictionary Game (Software Engineering)</li>
-            <li>Splashtop Automation Testing (Testing)</li>
-            <li>Network Traffic Analyzer & Visualizer (Networking)</li>
-        </ul>
+
+        <div class="project-card">
+            <h3>Pictionary Game</h3>
+            <p><strong>Category:</strong> Software Engineering</p>
+            <p>A multiplayer drawing and guessing game built with Python and WebSockets.</p>
+            <a href="#">View Project</a>
+        </div>
+
+        <div class="project-card">
+            <h3>Splashtop Automation Testing</h3>
+            <p><strong>Category:</strong> Testing</p>
+            <p>Automated testing of Splashtop website using Selenium and PyTest with POM.</p>
+            <a href="#">View Project</a>
+        </div>
+
+        <div class="project-card">
+            <h3>Network Traffic Analyzer & Visualizer</h3>
+            <p><strong>Category:</strong> Networking</p>
+            <p>Analyzes network traffic and generates visual graphs using Python.</p>
+            <a href="#">View Project</a>
+        </div>
     </section>
 
     <!-- Contact Section -->
